@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "youtube-api"
+version = "0.1.0"
+description = ""
+authors = ["Luciano Filho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+packages = [{include = "youtube_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-auth = "^2.16.2"
+google-auth-oauthlib = "^1.0.0"
+google-auth-httplib2 = "^0.1.0"
+google-api-python-client = "^2.82.0"
+openai = "^0.27.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"
+pytest-cov = "^4.0.0"
+blue = "^0.9.1"
+isort = "^5.12.0"
+taskipy = "^1.10.3"
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocstrings-python = "^0.8.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules" 
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint = "blue . && isort ."
+docs = "mkdocs serve"
+test = "pytest -s -x --cov=code -vv"
+post_test = "coverage html"
