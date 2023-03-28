@@ -6,7 +6,7 @@ This Python project helps users find resources to learn about the main topic of 
 
 - Extracts the main topic from an SQL query using OpenAI GPT-3.5-turbo.
 - Searches YouTube for the top video resources related to the main topic.
-- Displays the video titles and URLs for user convenience.
+- Displays the video titles and URLs for user convenience.  
 
 ## Installation
 To install the project, you need to have Python 3.10 and Poetry installed. Follow these steps:
